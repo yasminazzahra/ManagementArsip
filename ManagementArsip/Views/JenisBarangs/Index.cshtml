@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ManagementArsip.Models.JenisBarang>
+
+@{
+    ViewData["Title"] = "JenisBarang";
+}
+
+<h1>Jenis Barang</h1>
+
+<p>
+    <a asp-action="Create">Tambahkan Jenis Barang</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Jenis Barang")
+            </th>
+            <th>
+                @Html.DisplayName("ID Barang")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaJenisbarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBarang)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdJenisbarang">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdJenisbarang">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdJenisbarang">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

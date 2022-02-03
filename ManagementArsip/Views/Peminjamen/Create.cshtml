@@ -1,0 +1,63 @@
+﻿@model ManagementArsip.Models.Peminjaman
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Tambahkan Peminjaman</h1>
+
+<h4>Peminjaman</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdPeminjaman" class="control-label">ID Peminjaman</label>
+                <input asp-for="IdPeminjaman" class="form-control" />
+                <span asp-validation-for="IdPeminjaman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TanggalPeminjaman" class="control-label">Tanggal Peminjaman</label>
+                <input asp-for="TanggalPeminjaman" class="form-control" />
+                <span asp-validation-for="TanggalPeminjaman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdBarang" class="control-label">ID Barang</label>
+                <input asp-for="IdBarang" class="form-control" />
+                <span asp-validation-for="IdBarang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TanggalPengembalian" class="control-label">Tanggal Pengembalian</label>
+                <input asp-for="TanggalPengembalian" class="form-control" />
+                <span asp-validation-for="TanggalPengembalian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskripsiPeminjaman" class="control-label">Deskripsi Peminjaman</label>
+                <input asp-for="DeskripsiPeminjaman" class="form-control" />
+                <span asp-validation-for="DeskripsiPeminjaman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JumlahPeminjaman" class="control-label">Jumlah Peminjaman</label>
+                <input asp-for="JumlahPeminjaman" class="form-control" />
+                <span asp-validation-for="JumlahPeminjaman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUser" class="control-label">ID User</label>
+                <input asp-for="IdUser" class="form-control" />
+                <span asp-validation-for="IdUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

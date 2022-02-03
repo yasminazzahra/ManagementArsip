@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ManagementArsip.Models.User>
+
+@{
+    ViewData["Title"] = "User";
+}
+
+<h1>User</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama User")
+            </th>
+            <th>
+                @Html.DisplayName("NIP")
+            </th>
+            <th>
+                @Html.DisplayName("Alamat")
+            </th>
+            <th>
+                @Html.DisplayName("No.HP")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alamat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoHp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdUser">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdUser">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdUser">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

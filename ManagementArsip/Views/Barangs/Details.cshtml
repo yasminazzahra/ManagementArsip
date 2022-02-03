@@ -1,0 +1,54 @@
+﻿@model ManagementArsip.Models.Barang
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Barang</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskripsiBarang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DeskripsiBarang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodeBarang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodeBarang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TahunPengadaan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TahunPengadaan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MerkBarang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MerkBarang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusBarang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusBarang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdUser)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdBarang">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
